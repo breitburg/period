@@ -1,23 +1,5 @@
-from PIL import ImageDraw
+from PIL import ImageDraw, ImageFont
 from luma.core.render import canvas
-
-
-class AdvancedDraw(ImageDraw.ImageDraw):
-    def __init__(self, image):
-        super(AdvancedDraw, self).__init__(image, mode='1')
-
-    def alert(self, text='Welcome', icon='error', duration=5):
-        from PIL import ImageFont, Image
-        from time import time
-
-        text_font = ImageFont.truetype('fonts/text.ttf', 9)
-
-        start_time = time()
-        while True:
-            if time() > start_time + duration: return
-
-            self.bitmap((10, 10), Image.open('icons/{icon}.png'.format(icon=icon)), fill=255)
-            self.text((10, 34), text=str(text), font=text_font, fill=255)
 
 
 class Canvas(canvas):
@@ -25,5 +7,27 @@ class Canvas(canvas):
         super(Canvas, self).__init__(device=device)
 
     def __enter__(self):
-        self.draw = AdvancedDraw(self.image)
+        self.draw = AdvancedDraw(self.image, self.device)
         return self.draw
+
+
+class AdvancedDraw(ImageDraw.ImageDraw):
+    def __init__(self, image, device):
+        super(AdvancedDraw, self).__init__(image, mode='1')
+        self.device = device
+
+    def alert(self, text='Произошла ошибка', font=ImageFont.truetype('fonts/text.ttf', 9), icon='error', duration=4):
+        from PIL import Image
+        from time import time
+
+        start_time = time()
+        pixels_step = round(127 / duration)
+
+        while True:
+            with canvas(self.device) as draw:
+                remaining_time = start_time + duration - time()
+                if remaining_time <= 0: break
+
+                draw.bitmap((10, 15), Image.open('icons/{icon}.png'.format(icon=icon)), fill=255)
+                draw.text((10, 35), text=str(text), font=font, fill=255)
+                draw.line([0, 63, (127 - round(remaining_time * pixels_step)), 63], fill=255)
