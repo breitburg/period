@@ -1,0 +1,6 @@
+luma.core>=1.9.0
+luma.emulator>=1.1.0
+luma.oled>=3.2.1
+pillow>=6.0.0
+pygame>=1.9.6
+pyserial>=3.4
