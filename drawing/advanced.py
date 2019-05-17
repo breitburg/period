@@ -1,5 +1,6 @@
 from PIL import ImageDraw
 from luma.core.render import canvas
+from drawing.question import QuestionButton
 
 
 class AdvancedDraw(ImageDraw.ImageDraw):
@@ -38,7 +39,23 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                                self.device.size[1] - 1,
                                self.device.size[0] - round(left_time * pixels_step),
                                self.device.size[1] - 1], fill=255)
-                    draw.bitmap((0, 0), Image.open('icons/arrow_right.png'), fill=255)
+                    # draw.bitmap((0, 0), Image.open('icons/arrow_right.png'), fill=255)
 
                 draw.bitmap((elements_positions, 15), Image.open('icons/{icon}.png'.format(icon=icon)), fill=255)
                 draw.text((elements_positions, 35), text=str(text), font=font, fill=255)
+
+    def question(self, text='Install updates?', font=None, icon='question', buttons=[
+        QuestionButton(text='Yes', icon='ok', ), None, QuestionButton(text='No', icon='close')
+    ]):
+        font = font if font else self.text_font
+        from PIL import Image
+
+        while True:
+            with canvas(self.device) as draw:
+                draw.bitmap((10, 15), Image.open('icons/{icon}.png'.format(icon=icon)), fill=255)
+                draw.text((10, 35), text=str(text), font=font, fill=255)
+
+                for button in buttons:
+                    if not button: continue
+                    draw.bitmap((110, (buttons.index(button) + 1) * 10),
+                                Image.open('icons/question/{icon}.png'.format(icon=button.icon)), fill=255)
