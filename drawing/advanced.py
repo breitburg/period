@@ -58,4 +58,4 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                 for button in buttons:
                     if not button: continue
                     draw.bitmap((110, (buttons.index(button) + 1) * 10),
-                                Image.open('icons/question/{icon}.png'.format(icon=button.icon)), fill=255)
+                                Image.open('icons/small/{icon}.png'.format(icon=button.icon)), fill=255)

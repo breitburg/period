@@ -6,4 +6,4 @@ device = Device()
 
 while True:
     with Canvas(device) as draw:
-        draw.question()
+        draw.alert()
