@@ -33,11 +33,12 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                     left_time = start_time + duration - time()
                     if left_time <= 0: break
 
-                if progress_bar and left_time: draw.line([
-                    0,
-                    self.device.size[1] - 1,
-                    self.device.size[0] - round(left_time * pixels_step),
-                    self.device.size[1] - 1], fill=255)
+                if progress_bar and left_time:
+                    draw.line([0,
+                               self.device.size[1] - 1,
+                               self.device.size[0] - round(left_time * pixels_step),
+                               self.device.size[1] - 1], fill=255)
+                    draw.bitmap((0, 0), Image.open('icons/arrow_right.png'), fill=255)
 
                 draw.bitmap((elements_positions, 15), Image.open('icons/{icon}.png'.format(icon=icon)), fill=255)
                 draw.text((elements_positions, 35), text=str(text), font=font, fill=255)
