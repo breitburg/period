@@ -46,7 +46,8 @@ class AdvancedDraw(ImageDraw.ImageDraw):
 
     def question(self, text='Install updates?', font=None, icon='question', buttons=[
         QuestionButton(text='Yes', icon='ok', ), None, QuestionButton(text='No', icon='close')
-    ]):
+    ], auto_select=0) -> int:
+        assert len(buttons) == 3
         font = font if font else self.text_font
         from PIL import Image
 
@@ -57,5 +58,5 @@ class AdvancedDraw(ImageDraw.ImageDraw):
 
                 for button in buttons:
                     if not button: continue
-                    draw.bitmap((110, (buttons.index(button) + 1) * 10),
+                    draw.bitmap((114, (buttons.index(button) + 1) * 20 - 12),
                                 Image.open('icons/small/{icon}.png'.format(icon=button.icon)), fill=255)
