@@ -6,4 +6,5 @@ device = Device()
 
 while True:
     with Canvas(device) as draw:
-        draw.alert()
+        result = draw.question(auto_select=0)
+        print(result)
