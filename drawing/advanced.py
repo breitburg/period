@@ -44,6 +44,12 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                 draw.bitmap((elements_positions, 15), Image.open('icons/{icon}.png'.format(icon=icon)), fill=255)
                 draw.text((elements_positions, 35), text=str(text), font=font, fill=255)
 
+                # TODO: Check performance on real hardware
+                for i in range(1, 4):
+                    for pixel in range(0, self.device.size[1]):
+                        if pixel % i != 0: continue
+                        draw.point((self.device.size[0] - i, pixel), fill=0)
+
     def question(self, text='Apply changes?', font=None, icon='question', actions=[
         QuestionButton(text='Yes', icon='ok', ), QuestionButton(text='No', icon='close')
     ], auto_select=None, auto_duration=15) -> int:
@@ -73,6 +79,5 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                                 Image.open('icons/small/{icon}.png'.format(icon=button.icon)), fill=255)
 
                 # TODO: Return physical button press result
-
                 draw.bitmap((10, 15), Image.open('icons/{icon}.png'.format(icon=icon)), fill=255)
                 draw.text((10, 35), text=str(text), font=font, fill=255)
