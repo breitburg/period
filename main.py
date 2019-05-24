@@ -5,5 +5,5 @@ device = Device()
 
 while True:
     with Canvas(device) as draw:
-        for i in range(0, 101):
-            draw.progress_bar(text=f'{i}%', value=i)
+        for progress in range(0, 101):
+            draw.progress_bar(text=f'{progress}%', value=progress)

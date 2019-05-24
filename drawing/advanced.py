@@ -1,7 +1,7 @@
 from PIL import ImageDraw
 from luma.core.render import canvas
 from drawing.question import QuestionButton
-
+from core.icons import icons, pictograms
 
 class AdvancedDraw(ImageDraw.ImageDraw):
     def __init__(self, image, device):
@@ -12,10 +12,9 @@ class AdvancedDraw(ImageDraw.ImageDraw):
         self.text_font = ImageFont.truetype('fonts/text.ttf', 9)
         self.caption_font = ImageFont.truetype('fonts/caption.ttf', 9)
 
-    def alert(self, text='An error has occurred', font=None, icon='error', duration=5, progress_bar=True,
+    def alert(self, text='An error has occurred', font=None, icon=icons.get('error'), duration=5, progress_bar=True,
               move_step=1.5):
         font = font if font else self.text_font
-        from PIL import Image
         from time import time
 
         start_time = None
@@ -41,7 +40,7 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                                self.device.size[1] - 1], fill=255)
                     # draw.bitmap((0, 0), Image.open('icons/arrow_right.png'), fill=255)
 
-                draw.bitmap((elements_positions, 15), Image.open('icons/{icon}.png'.format(icon=icon)), fill=255)
+                draw.bitmap((elements_positions, 15), icon, fill=255)
                 draw.text((elements_positions, 35), text=str(text), font=font, fill=255)
 
                 # TODO: Check performance on real hardware
@@ -50,13 +49,12 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                         if pixel % i != 0: continue
                         draw.point((self.device.size[0] - i, pixel), fill=0)
 
-    def question(self, text='Apply changes?', font=None, icon='question', actions=[
-        QuestionButton(text='Yes', icon='ok', ), QuestionButton(text='No', icon='close')
+    def question(self, text='Apply changes?', font=None, icon=icons.get('question'), actions=[
+        QuestionButton(text='Yes', icon=pictograms.get('ok'), ), QuestionButton(text='No', icon=pictograms.get('close'))
     ], auto_select=None, auto_duration=15) -> int:
         assert len(actions) == 2
         font = font if font else self.text_font
 
-        from PIL import Image
         from time import time
 
         start_time = time()
@@ -75,24 +73,23 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                                line_position], fill=255)
 
                 for button in actions:
-                    draw.bitmap((114, (actions.index(button) + 1) * 40 - 32),
-                                Image.open('icons/small/{icon}.png'.format(icon=button.icon)), fill=255)
+                    draw.bitmap((114, (actions.index(button) + 1) * 40 - 32), button.icon, fill=255)
 
                 # TODO: Return physical button press result
-                draw.bitmap((10, 15), Image.open('icons/{icon}.png'.format(icon=icon)), fill=255)
+                draw.bitmap((10, 15), icon, fill=255)
                 draw.text((10, 35), text=str(text), font=font, fill=255)
 
-    def progress_bar(self, text='Waiting...', font=None, icon='arrow_down', max_value=100, value=50):
+    def progress_bar(self, text='Waiting...', font=None, icon=icons.get('download'), max_value=100, value=50):
         # TODO: Add icon displaying
 
         font = font if font else self.text_font
 
         assert max_value < self.device.size[0]
         assert value <= max_value
-
         assert self.textsize(text=text, font=font)[0] <= self.device.size[0]
 
         with canvas(self.device) as draw:
+            draw.bitmap((0, 0), bitmap=icon, fill=255)
             draw.text(xy=((self.device.size[0] - self.textsize(text=text, font=font)[0]) / 2, 18), text=text, fill=255,
                       font=font, anchor='center')
 
