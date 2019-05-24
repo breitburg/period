@@ -91,9 +91,11 @@ class AdvancedDraw(ImageDraw.ImageDraw):
         assert value <= max_value
 
         assert self.textsize(text=text, font=font)[0] <= self.device.size[0]
-        self.text(xy=((self.device.size[0] - self.textsize(text=text, font=font)[0]) / 2, 18), text=text, fill=255,
-                  font=font, anchor='center')
 
-        notches = round((self.device.size[0] - max_value) / 2)
-        self.rectangle(xy=[notches, 35, self.device.size[0] - notches, 45], fill=0, outline=255)
-        self.rectangle(xy=[notches, 35, notches + value, 45], fill=255)
+        with canvas(self.device) as draw:
+            draw.text(xy=((self.device.size[0] - self.textsize(text=text, font=font)[0]) / 2, 18), text=text, fill=255,
+                      font=font, anchor='center')
+
+            notches = round((self.device.size[0] - max_value) / 2)
+            draw.rectangle(xy=[notches, 35, self.device.size[0] - notches, 45], fill=0, outline=255)
+            draw.rectangle(xy=[notches, 35, notches + value, 45], fill=255)
