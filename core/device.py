@@ -12,7 +12,7 @@ class Device(pygame if is_emulator else sh1106):
         else:
             from luma.core.interface.serial import spi
             serial = spi(device=0, port=0, bus_speed_hz=8000000, transfer_size=4096, gpio_DC=24, gpio_RST=25)
-            super(Device, self).__init__(serial, rotate=1)
+            super(Device, self).__init__(serial, rotate=2)
         self.__brightness = 255
 
     def set_brightness(self, level: int) -> bool:
