@@ -38,7 +38,6 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                                self.device.size[1] - 1,
                                self.device.size[0] - round(left_time * pixels_step),
                                self.device.size[1] - 1], fill=255)
-                    # draw.bitmap((0, 0), Image.open('icons/arrow_right.png'), fill=255)
 
                 draw.bitmap((elements_positions, 15), icon, fill=255)
                 draw.text((elements_positions, 35), text=str(text), font=font, fill=255)
@@ -50,7 +49,7 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                         draw.point((self.device.size[0] - i, pixel), fill=0)
 
     def question(self, text='Apply changes?', font=None, icon=icons.get('question'), actions=[
-        QuestionButton(text='Yes', icon=pictograms.get('ok'), ), QuestionButton(text='No', icon=pictograms.get('close'))
+        QuestionButton(text='Yes', pictogram=pictograms.get('ok'), ), QuestionButton(text='No', pictogram=pictograms.get('close'))
     ], auto_select=None, auto_duration=15) -> int:
         assert len(actions) == 2
         font = font if font else self.text_font
@@ -73,13 +72,13 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                                line_position], fill=255)
 
                 for button in actions:
-                    draw.bitmap((114, (actions.index(button) + 1) * 40 - 32), button.icon, fill=255)
+                    draw.bitmap((114, (actions.index(button) + 1) * 40 - 32), button.pictogram, fill=255)
 
                 # TODO: Return physical button press result
                 draw.bitmap((10, 15), icon, fill=255)
                 draw.text((10, 35), text=str(text), font=font, fill=255)
 
-    def progress_bar(self, text='Waiting...', font=None, icon=icons.get('download'), max_value=100, value=50):
+    def progress_bar(self, text='Waiting...', font=None, max_value=100, value=50):
         # TODO: Add icon displaying
 
         font = font if font else self.text_font
@@ -89,10 +88,9 @@ class AdvancedDraw(ImageDraw.ImageDraw):
         assert self.textsize(text=text, font=font)[0] <= self.device.size[0]
 
         with canvas(self.device) as draw:
-            draw.bitmap((0, 0), bitmap=icon, fill=255)
-            draw.text(xy=((self.device.size[0] - self.textsize(text=text, font=font)[0]) / 2, 18), text=text, fill=255,
+            draw.text(xy=((self.device.size[0] - self.textsize(text=text, font=font)[0]) / 2, 23), text=text, fill=255,
                       font=font, anchor='center')
 
-            notches = round((self.device.size[0] - max_value) / 2)
-            draw.rectangle(xy=[notches, 35, self.device.size[0] - notches, 45], fill=0, outline=255)
-            draw.rectangle(xy=[notches, 35, notches + value, 45], fill=255)
+            bar_notches = round((self.device.size[0] - max_value) / 2)
+            draw.rectangle(xy=[bar_notches, 40, self.device.size[0] - bar_notches, 42], fill=0, outline=255)
+            draw.rectangle(xy=[bar_notches, 40, bar_notches + value, 42], fill=255)

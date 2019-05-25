@@ -1,7 +1,7 @@
 class QuestionButton:
-    def __init__(self, text, icon, action=None):
+    def __init__(self, text, pictogram, action=None):
         self.text = text
-        self.icon = icon
+        self.pictogram = pictogram
         self.action = action
 
     def activate(self):
