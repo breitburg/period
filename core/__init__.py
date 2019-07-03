@@ -1,4 +1,4 @@
-from core.device import *
-from core.icons import icons, pictograms
-from drawing import Canvas
-from drawing.question import QuestionButton
+from .device import *
+from .icons import icons, pictograms
+from draw import Canvas
+from draw.question import QuestionButton

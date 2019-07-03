@@ -1,6 +1,6 @@
 from PIL import ImageDraw
 from luma.core.render import canvas
-from drawing.question import QuestionButton
+from .question import QuestionButton
 from core.icons import icons, pictograms
 
 class AdvancedDraw(ImageDraw.ImageDraw):
@@ -49,7 +49,7 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                         draw.point((self.device.size[0] - i, pixel), fill=0)
 
     def question(self, text='Apply changes?', font=None, icon=icons.get('question'), actions=[
-        QuestionButton(text='Yes', pictogram=pictograms.get('ok'), ), QuestionButton(text='No', pictogram=pictograms.get('close'))
+        QuestionButton(text='Yes', pictogram=pictograms.get('ok')), QuestionButton(text='No', pictogram=pictograms.get('close'))
     ], auto_select=None, auto_duration=15) -> int:
         assert len(actions) == 2
         font = font if font else self.text_font

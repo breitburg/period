@@ -12,5 +12,6 @@ class IconPack:
     def get(self, name):
         return self.icons[name]
 
+
 icons = IconPack('icons/')
 pictograms = IconPack('icons/pictograms')

@@ -1,5 +1,5 @@
 from luma.core.render import canvas
-from drawing.advanced import AdvancedDraw
+from .advanced import AdvancedDraw
 
 
 class Canvas(canvas):
