@@ -1,3 +1,5 @@
 # watch
 
-Simple Raspberry Pi Zero based smart-watch API environment with pre-built functions and methods for faster development.
+You can use API`s do display interfaces like those:
+
+![](http://g.recordit.co/xxTbur4VOO.gif) ![](http://g.recordit.co/xY97kqQujN.gif) ![](http://g.recordit.co/ncgfFEVx5Q.gif)

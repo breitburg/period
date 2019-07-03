@@ -1,5 +1,8 @@
+import logging
+
 from platform import processor
 is_emulator = processor() in ['x86_64', 'i386']
+logging.debug(f'Processor type is {processor()}. This is a {"emulator" if is_emulator else "real hardware"}.')
 
 if is_emulator: from luma.emulator.device import pygame
 else: from luma.oled.device import sh1106
@@ -16,7 +19,7 @@ class Device(pygame if is_emulator else sh1106):
         self.__brightness = 255
 
     def set_brightness(self, level: int) -> bool:
-        assert level >= 0 and level <= 100
+        assert 0 <= level <= 100
         self.__brightness = round(level * 2.55)
         return True
 

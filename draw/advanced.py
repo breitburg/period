@@ -20,6 +20,7 @@ class AdvancedDraw(ImageDraw.ImageDraw):
         start_time = None
         pixels_step = round(self.device.size[0] / duration)
         elements_positions = 0 - self.textsize(text=text, font=font)[0]
+
         assert move_step <= 10
 
         while True:
@@ -39,7 +40,7 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                                self.device.size[0] - round(left_time * pixels_step),
                                self.device.size[1] - 1], fill=255)
 
-                draw.bitmap((elements_positions, 15), icon, fill=255)
+                draw.bitmap((elements_positions, 15), icon.image, fill=255)
                 draw.text((elements_positions, 35), text=str(text), font=font, fill=255)
 
                 # TODO: Check performance on real hardware
@@ -72,10 +73,10 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                                line_position], fill=255)
 
                 for button in actions:
-                    draw.bitmap((114, (actions.index(button) + 1) * 40 - 32), button.pictogram, fill=255)
+                    draw.bitmap((114, (actions.index(button) + 1) * 40 - 32), button.pictogram.image, fill=255)
 
                 # TODO: Return physical button press result
-                draw.bitmap((10, 15), icon, fill=255)
+                draw.bitmap((10, 15), icon.image, fill=255)
                 draw.text((10, 35), text=str(text), font=font, fill=255)
 
     def progress_bar(self, text='Waiting...', font=None, max_value=100, value=50):

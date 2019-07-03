@@ -25,7 +25,7 @@ class ImagePack:
                 self.images[image_path.replace('.png', '')] = Pictogram(image) if image.size == (8, 8) else Icon(image)
 
     def get(self, name):
-        return self.images[name].image
+        return self.images[name]
 
 
 icons = ImagePack('images/')
