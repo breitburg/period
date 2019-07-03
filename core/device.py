@@ -1,5 +1,5 @@
 from platform import processor
-is_emulator = processor() == 'x86_64'
+is_emulator = processor() in ['x86_64', 'i386']
 
 if is_emulator: from luma.emulator.device import pygame
 else: from luma.oled.device import sh1106
