@@ -1,4 +1,4 @@
-# watch
+# tiny
 
 A set of pretty easy-to-use APIs for writing great applications for a 1-bit 128x64 pixel display with three buttons and a five-way joystick connected to the Raspberry Pi.
 
