@@ -14,7 +14,7 @@ def on_frame():
     tiny.draw.rectangle(xy=(0, 0, 10, 10), fill=255)
 
 if __name__ == '__main__':
-    tiny.run_app()  # Creating main loop
+    tiny.run_app()
 ```
 
 ## Requirements
