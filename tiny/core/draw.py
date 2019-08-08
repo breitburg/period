@@ -1,17 +1,16 @@
 from PIL import ImageDraw
 from PIL import Image
-from PIL import ImageFont
 from tiny.core.device import device
+from tiny.core.fonts import text_font
 
 
 class Draw(ImageDraw.ImageDraw):
     def __init__(self, device):
         self.image = Image.new(device.mode, device.size)
         self.device = device
-        super(Draw, self).__init__(self.image, mode=self.device.mode)
 
-        # self.text = ImageFont.truetype('fonts/text.ttf', 9)
-        # self.caption_font = ImageFont.truetype('fonts/caption.ttf', 9)
+        super(Draw, self).__init__(self.image, mode=self.device.mode)
+        self.font = text_font
 
     def update(self):
         self.device.display(self.image.convert(self.device.mode))
