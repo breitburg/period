@@ -1,10 +1,12 @@
-from core import *
-from random import randint
-from time import sleep
+import tiny  # Importing tiny library
 
-device = Device()
+@tiny.on_start
+def on_start():
+    tiny.alert(text='Starting application')
 
-while True:
-    with Canvas(device) as draw:
-        draw.question(auto_select=True)
-        sleep(5)
+@tiny.on_update
+def on_frame():
+    tiny.alert(text='Frame!')
+
+if __name__ == '__main__':
+    tiny.run_app()
