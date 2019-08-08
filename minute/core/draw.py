@@ -1,7 +1,7 @@
 from PIL import ImageDraw
 from PIL import Image
-from tiny.core.device import device
-from tiny.core.fonts import text_font
+from minute.core.device import device
+from minute.core.fonts import text_font
 
 
 class Draw(ImageDraw.ImageDraw):

@@ -1,5 +1,5 @@
-from tiny.core.bindings import bindings
-from tiny.core.draw import draw
+from minute.core.bindings import bindings
+from minute.core.draw import draw
 
 
 # Функция, которая отвечает за запуск

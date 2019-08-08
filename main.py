@@ -1,7 +1,7 @@
-import tiny
+import minute
 
-@tiny.on_update
+@minute.on_update
 def on_frame():
-    tiny.alert(text='Здарова!')
+    minute.alert(text='Здарова!')
 
-tiny.run_app()
+minute.run_app()

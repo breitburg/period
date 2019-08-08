@@ -1,4 +1,4 @@
-from tiny.core.draw import draw
+from minute.core.draw import draw
 
 
 def alert(text='An error has occurred', font=None, duration=5, progress_bar=True, move_step=1.5):
