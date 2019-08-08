@@ -1,1 +1,1 @@
-from .alert import alert
+from tiny.elements.alert import alert
