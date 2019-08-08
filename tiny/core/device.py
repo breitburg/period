@@ -16,4 +16,4 @@ class Device(pygame if is_emulator else sh1106):
 
 
 # Создание инстанса устройства
-device: Device = Device()
+device = Device()

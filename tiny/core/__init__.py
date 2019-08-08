@@ -6,5 +6,5 @@ from tiny.core.draw import draw
 def run_app() -> None:
     bindings.get('on_start')()
     while True:
-        draw.update()
+        draw.cleanup()
         bindings.get('on_update')()

@@ -15,8 +15,11 @@ class Draw(ImageDraw.ImageDraw):
 
     def update(self):
         self.device.display(self.image.convert(self.device.mode))
+
+    def cleanup(self):
+        self.device.display(self.image.convert(self.device.mode))
         self.rectangle(xy=(0, 0, self.device.size[0], self.device.size[1]), fill=0)
 
 
 # Создание инстанса дравера
-draw: Draw = Draw(device)
+draw = Draw(device)
