@@ -3,19 +3,16 @@
 Refactored library:
 
 ```python
-import tiny  # Importing tiny library
+import tiny
 
-# Calling on application start
 @tiny.on_start
 def on_start():
     tiny.alert(text='Hello, world!')
 
-# Calling on frame update
 @tiny.on_update
 def on_frame():
     tiny.draw.rectangle(xy=(0, 0, 10, 10), fill=255)
 
-# Entry-point
 if __name__ == '__main__':
     tiny.run_app()  # Creating main loop
 ```
