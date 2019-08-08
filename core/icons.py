@@ -15,5 +15,5 @@ class ImagePack:
         return self.images[name]
 
 
-icons = ImagePack('images/')
-pictograms = ImagePack('images/pictograms')
+icons = ImagePack('assets/icons')
+pictograms = ImagePack('assets/pictograms')

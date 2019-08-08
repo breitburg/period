@@ -4,6 +4,7 @@ from .question import QuestionButton
 from core.icons import icons, pictograms
 import logging
 
+
 class AdvancedDraw(ImageDraw.ImageDraw):
     def __init__(self, image, device):
         logging.debug('Initializing parent class...')
@@ -50,7 +51,6 @@ class AdvancedDraw(ImageDraw.ImageDraw):
                 draw.bitmap((elements_positions, 15), icon, fill=255)
                 draw.text((elements_positions, 35), text=str(text), font=font, fill=255)
 
-                # TODO: Check performance on real hardware
                 for i in range(1, 4):
                     for pixel in range(0, self.device.size[1]):
                         if pixel % i != 0: continue
