@@ -7,5 +7,5 @@ bindings = dict(  # Создание переменной для хранени�
 
 # Создание декораторов
 def on_start(function): bindings.update({'on_start': function}); return function
-def on_update(function): bindings.update({'on_update': function}); return function
+def on_tick(function): bindings.update({'on_tick': function}); return function
 def on_background(function): bindings.update({'on_background': function}); return function

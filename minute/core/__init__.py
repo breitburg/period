@@ -9,5 +9,5 @@ def run_app():
         bindings.get('on_start')()
         while True:
             draw.clear()
-            bindings.get('on_update')()
+            bindings.get('on_tick')()
     except Exception as exception: error(exception)

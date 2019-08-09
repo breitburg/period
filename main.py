@@ -1,7 +1,9 @@
 import minute
+import time
 
-@minute.on_update
+@minute.on_tick
 def On_Update():
-    pass
+    minute.alert()
+    time.sleep(1)
 
 minute.run_app()

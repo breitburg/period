@@ -7,9 +7,9 @@ import minute
 
 @minute.on_start
 def on_start():
-    tiny.alert(text='Hello, world!')
+    minute.alert(text='Hello, world!')
 
-@minute.on_update
+@minute.on_tick
 def on_frame():
     minute.draw.rectangle(xy=(0, 0, 10, 10), fill=255)
 

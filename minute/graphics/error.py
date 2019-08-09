@@ -5,7 +5,9 @@ from textwrap import wrap
 
 
 def error(exception):
+    # TODO: Dynamic exception range
     exception_range = 2
+
     for offset in range(exception_range):
         draw.text(xy=(10 + offset * 12, 10), text='\uf071', fill=True, font=icons)
 
