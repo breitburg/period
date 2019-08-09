@@ -1,10 +1,7 @@
-from core import *
-from random import randint
-from time import sleep
+import minute
 
-device = Device()
+@minute.on_update
+def on_frame():
+    minute.alert(text='Здарова!')
 
-while True:
-    with Canvas(device) as draw:
-        draw.question(auto_select=True)
-        sleep(5)
+minute.run_app()
