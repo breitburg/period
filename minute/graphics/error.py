@@ -5,7 +5,6 @@ from textwrap import wrap
 
 
 def error(exception):
-
     exception_range = 1
     draw.text(xy=(10, 10), text='\uf071 ' * exception_range, fill=True, font=icons)
     draw.text(xy=(10 + exception_range * 11, 10), text=type(exception).__name__, fill=True)

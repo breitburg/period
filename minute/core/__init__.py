@@ -8,4 +8,6 @@ def run_app():
         while True:
             draw.clear()
             bindings.get('on_tick')()
-    except Exception as exception: error(exception)
+    except Exception as exception:
+        draw.clear()
+        error(exception)
