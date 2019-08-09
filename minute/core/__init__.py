@@ -1,10 +1,8 @@
-from minute.core.bindings import bindings
-from minute.core.draw import draw
-from minute.graphics.error import error
-
-
-# Функция, которая отвечает за запуск
 def run_app():
+    from minute.core.bindings import bindings
+    from minute.core.draw import draw
+    from minute.graphics.error import error
+
     try:
         bindings.get('on_start')()
         while True:

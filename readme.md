@@ -7,7 +7,7 @@ import minute
 
 @minute.on_start
 def on_start():
-    minute.alert(text='Hello, world!')
+    minute.graphics.alert(text='Hello, world!')
 
 @minute.on_tick
 def on_frame():
