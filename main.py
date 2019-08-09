@@ -1,9 +1,7 @@
 import minute
-import time
 
 @minute.on_update
-def on_frame():
-    minute.alert(text='Вам новое сообщение!')
-    time.sleep(1)
-    
+def On_Update():
+    pass
+
 minute.run_app()

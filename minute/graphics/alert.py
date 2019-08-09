@@ -1,8 +1,13 @@
 from minute.core.draw import draw
 
 
-def alert(text='Hello, world!', animation_offset=3, xy=(10, 10)):
+def alert(text='Hello, world!', animation_offset=3):
     tokens = text.split()
+
+    text_size = draw.textsize(text=text)
+    xy = (round((draw.device.size[0] - text_size[0]) / 2),
+          round((draw.device.size[1] - text_size[1]) / 2))
+
     for token in tokens:
         for height in range(animation_offset):
             draw.text(xy=xy, text=' '.join(tokens[:tokens.index(token)]), fill=True)
