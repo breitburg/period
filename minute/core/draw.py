@@ -12,11 +12,11 @@ class Draw(ImageDraw.ImageDraw):
         super(Draw, self).__init__(self.image, mode=self.device.mode)
         self.font = text_font
 
-    def update(self):
+    def apply(self):
         self.device.display(self.image.convert(self.device.mode))
 
-    def cleanup(self):
-        self.device.display(self.image.convert(self.device.mode))
+    def clear(self):
+        self.apply()
         self.rectangle(xy=(0, 0, self.device.size[0], self.device.size[1]), fill=0)
 
 

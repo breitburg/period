@@ -6,5 +6,5 @@ from minute.core.draw import draw
 def run_app() -> None:
     bindings.get('on_start')()
     while True:
-        draw.cleanup()
+        draw.clear()
         bindings.get('on_update')()
