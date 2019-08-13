@@ -5,6 +5,9 @@ def run_app():
 
     try:
         bindings.get('on_start')()
-        while True: draw.clear(); bindings.get('on_tick')()
+        while True:
+            draw.clear()
+            bindings.get('on_tick')()
     except Exception as exception:
-        draw.clear(); error(exception)
+        draw.clear()
+        error(exception)

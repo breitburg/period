@@ -10,8 +10,9 @@ def alert(text='Hello, world!', animation_offset=3):
 
     for token in tokens:
         for height in range(animation_offset):
-            draw.text(xy=xy, text=' '.join(tokens[:tokens.index(token)]), fill=True)
+            display_text = ' '.join(tokens[:tokens.index(token)])
+            offset = draw.textsize(text=f'{display_text} ')[0]
 
-            offset = draw.textsize(text=' '.join(tokens[:tokens.index(token)]) + ' ')[0]
+            draw.text(xy=xy, text=display_text, fill=True)
             draw.text(xy=(xy[0] + offset, xy[1] + (animation_offset - height) - 1), text=token, fill=True)
             draw.clear()
