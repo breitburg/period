@@ -1,4 +1,4 @@
-# minute ![](https://img.shields.io/github/license/breitburg/minute) ![](https://img.shields.io/github/languages/code-size/breitburg/minute) ![](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/breitburg/minute)
+# minute ![](https://img.shields.io/github/languages/code-size/breitburg/minute) ![](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/breitburg/minute)
 
 Refactored library:
 
