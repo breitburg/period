@@ -6,6 +6,6 @@ bindings = dict(
 )
 
 
-def on_start(function): bindings.update({'on_start': function}); return function
-def on_tick(function): bindings.update({'on_tick': function}); return function
-def on_background(function): bindings.update({'on_background': function}); return function
+def on_start(function): bindings.update({'on_start': function}); return empty
+def on_tick(function): bindings.update({'on_tick': function}); return empty
+def on_background(function): bindings.update({'on_background': function}); return empty
