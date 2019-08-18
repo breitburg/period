@@ -1,13 +1,13 @@
 import minute
 
 @minute.on_start
-def on_start():
-    minute.globals.a = 3
-    pass
+def on_load():
+  # Init code here...
+  minute.globals.username = 'Debil'
 
 @minute.on_tick
 def on_frame():
-    print(minute.globals.a)
+  minute.graphics.alert(text=minute.globals.username)
 
 if __name__ == '__main__':
-    minute.run_app()
+  minute.run_app()
