@@ -1,1 +1,1 @@
-print('Well done!')
+assert True is True  # stressful test

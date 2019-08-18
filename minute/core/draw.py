@@ -1,7 +1,7 @@
 from PIL import ImageDraw
 from PIL import Image
-from minute.core.fonts import text_font
-from minute.core.devices import device
+from minute.core.font import text_font
+from minute.core.device import device
 
 
 class Draw(ImageDraw.ImageDraw):

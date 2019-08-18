@@ -1,5 +1,5 @@
 def run_app():
-    from minute.core.bindings import bindings
+    from minute.core.binding import bindings
     from minute.core.draw import draw
     from minute.graphics.error import error
 

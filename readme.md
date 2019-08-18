@@ -1,13 +1,14 @@
 # minute ![](https://img.shields.io/github/languages/code-size/breitburg/minute) ![](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/breitburg/minute)
 
-Refactored library:
+Library for writing applications for watches with a 1-bit 128x64 display and [PiSugar](https://github.com/PiSugar/PiSugar) battery.
 
 ```python
 import minute
 
 @minute.on_start
 def on_start():
-    minute.graphics.alert(text='Hello, world!')
+    minute.public.name = 'Alex'
+    minute.graphics.alert(text=f'Welcome, {minute.public.name}!')
 
 @minute.on_tick
 def on_frame():
