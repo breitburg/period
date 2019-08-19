@@ -1,2 +1,2 @@
-from minute.graphics.alert import alert
-from minute.graphics.error import error
+from period.graphics.alert import alert
+from period.graphics.error import error

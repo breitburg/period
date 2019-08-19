@@ -1,21 +1,21 @@
-# minute ![](https://img.shields.io/github/languages/code-size/breitburg/minute) ![](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/breitburg/minute)
+# period ![](https://img.shields.io/github/languages/code-size/breitburg/period) ![](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/breitburg/period)
 
 Library for writing applications for watches with a 1-bit 128x64 display and [PiSugar](https://github.com/PiSugar/PiSugar) battery.
 
 ```python
-import minute
+import period
 
-@minute.on_start
+@period.on_start
 def on_start():
-    minute.public.name = 'Alex'
-    minute.graphics.alert(text=f'Welcome, {minute.public.name}!')
+    period.public.name = 'Alex'
+    period.graphics.alert(text=f'Welcome, {period.public.name}!')
 
-@minute.on_tick
+@period.on_tick
 def on_frame():
-    minute.draw.rectangle(xy=(0, 0, 10, 10), fill=255)
+    period.draw.rectangle(xy=(0, 0, 10, 10), fill=255)
 
 if __name__ == '__main__':
-    minute.run_app()
+    period.run_app()
 ```
 
 ## Requirements

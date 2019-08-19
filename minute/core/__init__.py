@@ -1,7 +1,7 @@
 def run_app():
-    from minute.core.binding import bindings
-    from minute.core.draw import draw
-    from minute.graphics.error import error
+    from period.core.binding import bindings
+    from period.core.draw import draw
+    from period.graphics.error import error
 
     on_start = bindings.get('on_start')
     on_tick = bindings.get('on_tick')

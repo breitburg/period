@@ -1,4 +1,4 @@
-from minute.core.draw import draw
+from period.core.draw import draw
 
 
 def alert(text='Hello, world!', animation_offset=3):

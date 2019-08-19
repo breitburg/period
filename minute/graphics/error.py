@@ -1,5 +1,5 @@
-from minute.core.draw import draw
-from minute.core.font import icons
+from period.core.draw import draw
+from period.core.font import icons
 from time import sleep
 from textwrap import wrap
 

@@ -1,13 +1,13 @@
-import minute
+import period
 
-@minute.on_start
+@period.on_start
 def on_load():
   # Init code here...
-  minute.public.username = 'Debil'
+  period.public.username = 'Debil'
 
-@minute.on_tick
+@period.on_tick
 def on_frame():
-  minute.graphics.alert(text=minute.public.username)
+  period.graphics.alert(text=period.public.username)
 
 if __name__ == '__main__':
-  minute.run_app()
+  period.run_app()
