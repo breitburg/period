@@ -1,8 +1,8 @@
 from period.core.draw import draw
-from time import sleep
+from period.core.utils import delay
 
 
-def alert(text='Hello, world!', animation_offset=3, scrolling_speed=3, sleep_time=2, smooth=False):
+def alert(text='Hello, world!', animation_offset=3, scrolling_speed=5, sleep_time=2, smooth=False):
     # Entry filling animation
     for height in range(round(draw.device.size[1] / scrolling_speed)):
         offset = draw.device.size[1] - height * scrolling_speed  # Calculating offsets
@@ -14,7 +14,7 @@ def alert(text='Hello, world!', animation_offset=3, scrolling_speed=3, sleep_tim
                     if point % row == 0: continue
                     draw.point(xy=(point, offset + row - 2), fill=False)  # Filling black point
 
-        draw.apply()  # Applying
+        draw.apply()  # Applying, but not clearing
 
     # Splitting tokens
     tokens = text.split()
@@ -25,14 +25,14 @@ def alert(text='Hello, world!', animation_offset=3, scrolling_speed=3, sleep_tim
     for token in tokens:  # Foreach tokens
         for height in range(animation_offset):  # Foreach animation for each token
             draw.rectangle(xy=(0, 0, draw.device.size[0], draw.device.size[1]), fill=True)  # Drawing filled rectangle
+
             display_text = ' '.join(tokens[:tokens.index(token)])  # Join all tokens to get display string
             offset = draw.textsize(text=f'{display_text} ')[0]  # Calculating offsets for text
 
             draw.text(xy=xy, text=display_text, fill=False)  # Drawing already animated text
+            draw.text(xy=((xy[0] + offset), xy[1] + (animation_offset - height) - 1), text=token, fill=False)  # Drawing new token with specified height
 
-            # Drawing new token with specified height
-            draw.text(xy=((xy[0] + offset), xy[1] + (animation_offset - height) - 1), text=token, fill=False)
             draw.clear()  # Clearing screen and going to new cycle iteration
 
     # After all animations just relax and sleep for a sleep_time
-    sleep(sleep_time)
+    delay(sleep_time)

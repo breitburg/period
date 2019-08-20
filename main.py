@@ -1,15 +1,12 @@
 import period
 
-
 @period.on_start
 def on_load():
-  # Init code here...
-  period.public.username = 'Вам новое сообщение!'
+    pass
 
 @period.on_tick
-def on_frame():
-  period.draw.rectangle(xy=(0, 0, 10, 10), fill=True)
-  period.graphics.alert(text=period.public.username)
+def on_tick():
+    print(period.buttons.right in period.buttons.get_pressed())
 
 if __name__ == '__main__':
-  period.run_app()
+    period.run_app()

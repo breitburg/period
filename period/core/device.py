@@ -1,9 +1,10 @@
 from platform import processor
 is_emulator = processor() in ['x86_64', 'i386']
+device = 0
 
 if is_emulator:
-    from luma.emulator.device import pygame
-    device = pygame(mode='1', scale=2, frame_rate=16)
+    from period.core.emulator import Emulator
+    device = Emulator(mode='1', scale=2, frame_rate=16)
 else:
     from luma.oled.device import sh1106
     from luma.core.interface.serial import spi
