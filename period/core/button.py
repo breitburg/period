@@ -19,7 +19,7 @@ first = Button(6)
 second = Button(7)
 third = Button(8)
 
-__buttons_keys = {
+__buttons_keys__ = {
     __K_RIGHT: right,
     __K_LEFT: left,
     __K_UP: up,
@@ -32,4 +32,4 @@ __buttons_keys = {
 
 
 def get_pressed():
-    return [__buttons_keys[button] for button in __device__.get_pressed()]
+    return [__buttons_keys__[button] for button in __device__.get_pressed()]
