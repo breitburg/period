@@ -32,7 +32,7 @@ To assembly your own DIY watch you need to buy those elements:
 
 To automaticly install all requirements use `pip` terminal util:
 
-```python
+```console
 pip install -r requirements.txt
 ```
 
