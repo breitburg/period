@@ -2,7 +2,7 @@ from period.core.device import device as __device__
 from pygame import K_UP as __K_UP,\
     K_DOWN as __K_DOWN, K_RIGHT as __K_RIGHT,\
     K_LEFT as __K_LEFT, K_1 as __K_1, K_2 as __K_2,\
-    K_3 as __K_3
+    K_3 as __K_3, K_RCTRL as __K_RCTRL
 
 
 class Button:
@@ -14,15 +14,17 @@ right = Button(1)
 left = Button(2)
 up = Button(3)
 down = Button(4)
-first = Button(5)
-second = Button(6)
-third = Button(7)
+center = Button(5)
+first = Button(6)
+second = Button(7)
+third = Button(8)
 
 __buttons_keys = {
     __K_RIGHT: right,
     __K_LEFT: left,
     __K_UP: up,
     __K_DOWN: down,
+    __K_RCTRL: center,
     __K_1: first,
     __K_2: second,
     __K_3: third
