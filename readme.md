@@ -7,18 +7,19 @@ import period
 
 @period.on_start
 def on_start():
-    period.public.name = 'Alex'
-    period.graphics.alert(text=f'Welcome, {period.public.name}!')
+    period.graphics.alert(text='Hello, world')
 
 @period.on_tick
 def on_frame():
-    period.draw.rectangle(xy=(0, 0, 10, 10), fill=255)
+    period.draw.rectangle(xy=(0, 0, 10, 10), fill=True)
 
 if __name__ == '__main__':
     period.run_app()
 ```
 
-## Hardware
+## Pricing
+
+To assembly your own DIY watch you need to buy those elements:
 
 | Name                | Price  | Source     |
 |---------------------|--------|------------|
