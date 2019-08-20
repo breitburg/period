@@ -1,5 +1,5 @@
 from period.core.draw import draw
-from period.core.utils import delay
+from period.core.util import delay
 
 
 def alert(text='Hello, world!', animation_offset=3, scrolling_speed=5, sleep_time=2, smooth=False):

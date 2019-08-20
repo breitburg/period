@@ -1,12 +1,14 @@
 import period
 
 @period.on_start
-def on_start():
-  period.public.text = 'pressed' if period.button.up in period.button.get_pressed() else 'not pressed'
+def on_load():
+    pass
 
 @period.on_tick
-def on_tick():
-  period.graphics.alert()
+def on_frame():
+    for btn in period.button.get_pressed():
+        if btn == period.button.right:
+            period.draw.text(xy=(0, 0), text='Нажато', fill=True)
 
 if __name__ == '__main__':
-  period.run_app()
+    period.run_app()

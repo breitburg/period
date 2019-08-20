@@ -6,6 +6,7 @@ from pygame import K_UP, K_DOWN, K_RIGHT, K_LEFT, K_1, K_2, K_3, K_RCTRL
 class Emulator(pygame):
     def __init__(self, mode='1', scale=2, frame_rate=16):
         super().__init__(mode=mode, scale=scale, frame_rate=frame_rate)
+        self._pygame.display.set_caption('Period Simulator')
         self.__pressed_buttons = []
 
     def apply_actions(self):
