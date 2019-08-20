@@ -1,4 +1,5 @@
 from period.core.device import device as __device__
+from period.core.device import is_emulator
 from pygame import K_UP as __K_UP,\
     K_DOWN as __K_DOWN, K_RIGHT as __K_RIGHT,\
     K_LEFT as __K_LEFT, K_1 as __K_1, K_2 as __K_2,\
@@ -31,5 +32,17 @@ __buttons_keys__ = {
 }
 
 
+__hardware_keys__ = {
+    6: up,
+    19: down,
+    5: left,
+    26: right,
+    13: center,
+    21: first,
+    20: second,
+    16: third
+}
+
+
 def get_pressed():
-    return [__buttons_keys__[button] for button in __device__.get_pressed()]
+    return [(__buttons_keys__ if is_emulator else __hardware_keys__)[button] for button in __device__.get_pressed()]
