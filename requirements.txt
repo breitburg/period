@@ -4,3 +4,4 @@ luma.oled>=3.2.1
 pillow>=6.0.0
 pygame>=1.9.6
 pyserial>=3.4
+fontawesome>=5.10.1.post1

@@ -30,6 +30,12 @@ To assembly your own DIY watch you need to buy those elements:
 
 ## Requirements
 
+To automaticly install all requirements use `pip` terminal util:
+
+```python
+pip install -r requirements.txt
+```
+
 All requirements are defined in `requirements.txt`:
 
 - luma.core (1.9.0)
@@ -38,3 +44,4 @@ All requirements are defined in `requirements.txt`:
 - pillow (6.0.0)
 - pygame (1.9.6)
 - pyserial (3.4)
+- fontawesome (5.10.1.post1)
