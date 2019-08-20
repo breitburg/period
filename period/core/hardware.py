@@ -6,6 +6,7 @@ class Hardware(sh1106):
     def __init__(self, serial):
         super().__init__(serial, rotate=2)
         self.__pins = [6, 19, 5, 26, 13, 21, 20, 16]
+        self.gpio_init()
 
     def gpio_init(self):
         GPIO.setmode(GPIO.BCM)
@@ -22,13 +23,6 @@ class Hardware(sh1106):
         return self.__pressed_buttons
 
     def display(self, image):
-        """
-        Takes a 1-bit :py:mod:`PIL.Image` and dumps it to the SH1106
-        OLED display.
-
-        :param image: Image to display.
-        :type image: :py:mod:`PIL.Image`
-        """
         assert(image.mode == self.mode)
         assert(image.size == self.size)
         self.apply_actions()
