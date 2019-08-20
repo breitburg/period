@@ -18,6 +18,15 @@ if __name__ == '__main__':
     period.run_app()
 ```
 
+## Hardware
+
+| Name                | Price  | Source     |
+|---------------------|--------|------------|
+| OLED Display Hat    | $11.66 | AliExpress |
+| Raspberry Pi Zero W | $18.89 | Amazon     |
+| PiSugar Battery     | $32.99 | Amazon     |
+| QI Wireless Charger |  $3.68 | AliExpress |
+
 ## Requirements
 
 All requirements are defined in `requirements.txt`:
