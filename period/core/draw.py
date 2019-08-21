@@ -1,6 +1,5 @@
-from PIL import ImageDraw
-from PIL import Image
-from period.core.font import text_font, icons_font
+from PIL import ImageDraw, Image, ImageFont
+from period.core.font import text_font
 from period.core.device import device
 
 
@@ -15,8 +14,8 @@ class Draw(ImageDraw.ImageDraw):
     def apply(self):
         self.device.display(self.image.convert(self.device.mode))
 
-    def icon(self, xy, icon, fill=None):
-        self.text(xy=xy, text=icon, font=icons_font, fill=fill)
+    def icon(self, xy, icon, fill=None, size=8):
+        self.text(xy=xy, text=icon, font=ImageFont.truetype('fonts/icons.ttf', size), fill=fill)
 
     def rounded_rectangle(self, xy, corner_radius, fill=None, outline=None):
         upper_left_point = xy[0]
