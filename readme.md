@@ -45,3 +45,8 @@ All requirements are defined in `requirements.txt`:
 - pygame (1.9.6)
 - pyserial (3.4)
 - fontawesome (5.10.1.post1)
+
+## Changelog
+
+**Release 0.0.1** (21-08-2019)
+- Initial release
