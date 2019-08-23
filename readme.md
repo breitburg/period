@@ -48,6 +48,10 @@ All requirements are defined in `requirements.txt`:
 
 ## Changelog
 
+**Release 0.0.5** (23-08-2019)
+- Renamed `new-project` option to `create`
+- Added resources API
+
 **Release 0.0.4** (23-08-2019)
 - Fixed bug with icons font
 - Fixed bug with running app function

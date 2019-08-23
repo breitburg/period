@@ -4,6 +4,7 @@ from os.path import join
 from json import dumps, loads
 from hashlib import md5
 from time import time
+from PIL import Image
 
 argv = argv[1:]
 
@@ -16,15 +17,23 @@ elif argv[0] == 'create':
 
     mkdir(path=path)
     open(file=join(path, 'package.json'), mode='w').write(dumps({
-        'name': argv[1],
-        'author': 'Professional programmer',
-        'version': '1.0.0',
-        'keywords': [
+        'name' : argv[1],
+        'author' : 'Professional programmer',
+        'version' : '1.0.0',
+        'uuid' : md5(f'{argv[1]}{path}{time()}'.encode('utf-8')).hexdigest(),
+        'sdk_version' : '1',
+        'keywords' : [
             'period-app'
         ],
-        'dependencies': {},
-        'period': dict(displayName=argv[1], uuid=md5(f'{argv[1]}{path}{time()}'.encode('utf-8')).hexdigest(),
-                       sdkVersion='1', watchapp=dict(watchface=False), resources=dict(media=[]))
+        'watchapp' : {
+            'watchface' : True if '--watchface' in argv else False
+        },
+        'resources' : [
+
+        ],
+        'dependencies' : {
+
+        }
     }))
 
     mkdir(path=join(path, 'src'))
@@ -40,4 +49,9 @@ elif argv[0] == 'run':
     sys_path.insert(0, path)
 
     app = __import__('src')
+
+    for resource in manifest['resources']:
+        if resource['type'] == 'bitmap_image':
+            app.period.resources.media[resource['name']] = Image.open(join(path, 'resources', resource['file']))
+
     app.period.core.run_app()
