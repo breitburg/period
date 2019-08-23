@@ -3,6 +3,8 @@ is_emulator = processor() in ['x86_64', 'i386']
 device = 0
 
 if is_emulator:
+    from os import environ
+    environ['PYGAME_HIDE_SUPPORT_PROMPT'] = 'hide'
     from period.core.emulator import Emulator
     device = Emulator(mode='1', scale=2, frame_rate=16)
 else:
