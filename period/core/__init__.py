@@ -14,13 +14,14 @@ def run_app():
             on_tick()
 
             # Drawing status bar
-            bar_height = 9
+            if False:
+                bar_height = 9
 
-            draw.rectangle(xy=(0, 0, 128, bar_height), fill=True)
-            for corner in [((0, bar_height + 1), (1, bar_height + 1), (0, bar_height + 2)),
+                draw.rectangle(xy=(0, 0, 128, bar_height), fill=True)
+                for corner in [((0, bar_height + 1), (1, bar_height + 1), (0, bar_height + 2)),
                            ((draw.device.size[0] - 2, bar_height + 1), (draw.device.size[0], bar_height + 1), (draw.device.size[0], bar_height + 3))]:
-                draw.polygon(xy=corner, fill=True)
-            draw.icon(xy=(115, 1), icon=icons['battery-full'], size=8)
+                    draw.polygon(xy=corner, fill=True)
+                draw.icon(xy=(115, 1), icon=icons['battery-full'], size=8)
 
     except Exception as exception:
         draw.clear()
