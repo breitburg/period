@@ -28,17 +28,6 @@ This command will generate sample project in your current path. To run your proj
 $ period run
 ```
 
-## Pricing
-
-To assembly your own DIY watch you need to buy those elements:
-
-| Name                | Price  | Source     |
-|---------------------|--------|------------|
-| OLED Display Hat    | $11.66 | AliExpress |
-| Raspberry Pi Zero W | $18.89 | Amazon     |
-| PiSugar Battery     | $32.99 | Amazon     |
-| QI Wireless Charger |  $3.68 | AliExpress |
-
 ## Requirements
 
 To automaticly install all requirements use `pip` terminal util:
