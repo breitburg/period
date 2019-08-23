@@ -14,14 +14,6 @@ def on_frame():
     period.draw.rectangle(xy=(0, 0, 10, 10), fill=True)
 ```
 
-## Installation
-
-To install the latest version of package open terminal and execute command:
-
-```console
-source <(curl -s https://raw.githubusercontent.com/breitburg/period/master/bin/install.sh)
-```
-
 ## Using
 
 After installing library you need to use `period` command line utility. This command will generate sample project in your current path:
