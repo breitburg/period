@@ -4,3 +4,4 @@ git clone https://github.com/breitburg/period.git ~/period/
 cd ~/period/
 
 sudo pip3 install -r requirements.txt
+sudo pip3 install .
