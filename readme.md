@@ -19,7 +19,7 @@ def on_frame():
 After installing library you need to use `period` command line utility:
 
 ```console
-$ period new-project (name)
+$ period create (name)
 ```
 
 This command will generate sample project in your current path. To run your project you need to be in the project path, use `run` argument to run.
