@@ -48,6 +48,10 @@ All requirements are defined in `requirements.txt`:
 
 ## Changelog
 
+**Release 0.0.6** (23-08-2019)
+- Added version checking option to comamnd line tool
+- Added help to command line tool
+
 **Release 0.0.5** (23-08-2019)
 - Renamed `new-project` option to `create`
 - Added resources API
