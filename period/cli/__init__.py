@@ -5,23 +5,30 @@ from json import dumps, loads
 from hashlib import md5
 from time import time
 from PIL import Image
+from period import __version__
 
 argv = argv[1:]
 
-if argv[0] == '--help':
-    print('There is no help!')
+if len(argv) == 0 or argv[0] == '--help':
+    print('Usage: period [OPTION]...\n\nOptions and arguments (and corresponding environment variables):\ncreate - Create new project\nrun - Run current project\nversion - Get current installed version number')
+
+elif argv[0] == 'version':
+    print(f'Installed version: Period SDK {__version__}')
 
 elif argv[0] == 'create':
-    path = join(getcwd(), argv[1])
-    print(f'Creating new project {argv[1]} in {path}')
+    name = argv[1]
+    if argv[1] in ['--name', '-n']: name = argv[2]
+
+    path = join(getcwd(), name)
+    print(f'Creating new project {name} in {path}')
 
     mkdir(path=path)
     open(file=join(path, 'package.json'), mode='w').write(dumps({
-        'name' : argv[1],
+        'name' : name,
         'author' : 'Professional programmer',
         'version' : '1.0.0',
-        'uuid' : md5(f'{argv[1]}{path}{time()}'.encode('utf-8')).hexdigest(),
-        'sdk_version' : '1',
+        'uuid' : md5(f'{name}{path}{time()}'.encode('utf-8')).hexdigest(),
+        'sdk_version' : __version__,
         'keywords' : [
             'period-app'
         ],
