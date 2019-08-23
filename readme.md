@@ -12,9 +12,20 @@ def on_start():
 @period.on_tick
 def on_frame():
     period.draw.rectangle(xy=(0, 0, 10, 10), fill=True)
+```
 
-if __name__ == '__main__':
-    period.run_app()
+## Using
+
+After installing library you need to use `period` command line utility:
+
+```console
+$ period new-project (name)
+```
+
+This command will generate sample project in your current path. To run your project you need to be in the project path, use `run` argument to run.
+
+```console
+$ period run
 ```
 
 ## Pricing
@@ -47,6 +58,10 @@ All requirements are defined in `requirements.txt`:
 - fontawesome (5.10.1.post1)
 
 ## Changelog
+
+**Release 0.0.3** (23-08-2019)
+- Added command line utility
+- New package architecture
 
 **Release 0.0.2** (23-08-2019)
 - Added new alerts
