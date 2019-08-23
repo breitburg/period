@@ -48,6 +48,10 @@ All requirements are defined in `requirements.txt`:
 
 ## Changelog
 
+**Release 0.0.4** (23-08-2019)
+- Fixed bug with icons font
+- Fixed bug with running app function
+
 **Release 0.0.3** (23-08-2019)
 - Added command line utility
 - New package architecture
