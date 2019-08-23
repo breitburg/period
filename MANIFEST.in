@@ -1,1 +1,3 @@
-include period/period/fonts/*
+include period/fonts/*
+include readme.md
+include requirements.txt
