@@ -48,5 +48,9 @@ All requirements are defined in `requirements.txt`:
 
 ## Changelog
 
+**Release 0.0.2** (23-08-2019)
+- Added new alerts
+- Added font awesome icons
+
 **Release 0.0.1** (21-08-2019)
 - Initial release
