@@ -41,4 +41,4 @@ elif argv[0] == 'run':
     sys_path.insert(0, path)
 
     app = __import__('src')
-    app.period.run_app()
+    app.period.core.run_app()
