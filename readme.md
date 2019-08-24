@@ -14,6 +14,14 @@ def on_frame():
     period.draw.rectangle(xy=(0, 0, 10, 10), fill=True)
 ```
 
+## Installation
+
+Use `pip` to install the latest version of `period` package:
+
+```console
+pip install git+https://github.com/breitburg/period
+```
+
 ## Using
 
 After installing library you need to use `period` command line utility. This command will generate sample project in your current path:
