@@ -2,4 +2,8 @@ from period.core.draw import draw
 
 
 def fps(fps):
-    draw.text(xy=(0, -2), text=f'{fps}fps', fill=True)
+    text = f'{fps}fps'
+
+    size = draw.textsize(text=text)
+    draw.rectangle(xy=(0, 0) + size, fill=False)
+    draw.text(xy=(0, -2), text=text, fill=True)
