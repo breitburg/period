@@ -1,26 +1,27 @@
 from luma.oled.device import sh1106
 import RPi.GPIO as GPIO
 
+pins = [6, 19, 5, 26, 13, 21, 20, 16]
+
+GPIO.setmode(GPIO.BCM)
+for pin in pins:
+    GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
 
 class Hardware(sh1106):
+    pressed_buttons = []
+
     def __init__(self, serial):
         super().__init__(serial, rotate=2)
-        self.__pins = [6, 19, 5, 26, 13, 21, 20, 16]
-        self.gpio_init()
-
-    def gpio_init(self):
-        GPIO.setmode(GPIO.BCM)
-        for pin in self.__pins:
-            GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
     def apply_actions(self):
-        self.__pressed_buttons.clear()
-        for button in self.__pins:
-            if not GPIO.input(button):
-                self.__pressed_buttons.append(button)
+        self.pressed_buttons.clear()
+        for button in pins:
+            if GPIO.input(button) == 0:
+                self.pressed_buttons.append(button)
 
     def get_pressed(self):
-        return self.__pressed_buttons
+        return self.pressed_buttons
 
     def display(self, image):
         assert(image.mode == self.mode)
