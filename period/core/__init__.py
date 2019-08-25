@@ -1,6 +1,7 @@
 def run_app():
     from period.core.binding import bindings
-    from period.core.font import icons
+    from period.graphics.statusbar import status_bar
+    from period.core.config import __configuration
     from period.core.draw import draw
     from period.graphics.error import error
 
@@ -14,14 +15,7 @@ def run_app():
             on_tick()
 
             # Drawing status bar
-            if False:
-                bar_height = 9
-
-                draw.rectangle(xy=(0, 0, 128, bar_height), fill=True)
-                for corner in [((0, bar_height + 1), (1, bar_height + 1), (0, bar_height + 2)),
-                           ((draw.device.size[0] - 2, bar_height + 1), (draw.device.size[0], bar_height + 1), (draw.device.size[0], bar_height + 3))]:
-                    draw.polygon(xy=corner, fill=True)
-                draw.icon(xy=(115, 1), icon=icons['battery-full'], size=8)
+            if __configuration.get('show_status_bar'): status_bar()
 
     except Exception as exception:
         draw.clear()
