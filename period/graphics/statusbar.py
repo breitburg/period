@@ -3,7 +3,7 @@ from period.core.font import icons
 from datetime import datetime
 
 
-def status_bar(bar_height=8):
+def status_bar(bar_height=9):
     for pixel in range(draw.device.size[0]):
         if pixel % 2 == 0: draw.point(xy=(pixel, bar_height), fill=True)
 
