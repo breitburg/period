@@ -62,6 +62,9 @@ All requirements are defined in `requirements.txt`:
 
 ## Changelog
 
+**Release 0.0.7** (25-08-2019)
+- Fixed buttons at hardware
+
 **Release 0.0.6** (23-08-2019)
 - Added version checking option to comamnd line tool
 - Added help to command line tool
