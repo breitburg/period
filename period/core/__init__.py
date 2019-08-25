@@ -23,3 +23,4 @@ def run_app():
     except Exception as exception:
         draw.clear()
         error(exception)
+        raise exception
