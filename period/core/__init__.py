@@ -24,12 +24,13 @@ def run_app():
             # Drawing status bar
             if __configuration.get('show_status_bar'): status_bar()
             if __configuration.get('show_fps'): fps(round(1 / (time() - start_time), 1))
-            if not get_pressed() :
-                if last_buttons_pressed_time + 2 <= start_time:
-                    draw.device.contrast(80 if is_emulator else 1)
-            else:
-                last_buttons_pressed_time = start_time
-                draw.device.contrast(255)
+            if __configuration.get('auto_dim'):
+                if not get_pressed() :
+                    if last_buttons_pressed_time + 2 <= start_time:
+                        draw.device.contrast(80 if is_emulator else 1)
+                else:
+                    last_buttons_pressed_time = start_time
+                    draw.device.contrast(255)
     except Exception as exception:
         draw.clear()
         error(exception)
