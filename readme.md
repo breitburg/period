@@ -62,6 +62,9 @@ All requirements are defined in `requirements.txt`:
 
 ## Changelog
 
+**Release 0.0.9** (27-08-2019)
+- Added support for Windows
+
 **Release 0.0.8** (26-08-2019)
 - Refactored CLI utility
 - Refactored status bar
