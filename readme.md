@@ -62,6 +62,12 @@ All requirements are defined in `requirements.txt`:
 
 ## Changelog
 
+**Release 0.0.8** (26-08-2019)
+- Refactored CLI utility
+- Refactored status bar
+- Added FPS counter
+- Added display dim
+
 **Release 0.0.7** (25-08-2019)
 - Fixed buttons at hardware
 
