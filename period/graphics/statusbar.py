@@ -15,4 +15,4 @@ def status_bar(bar_height=9):
 
     # When real physical device will have a battery with the ability to
     # get current voltage, we will display small battery icon at the right side in status bar
-    # draw.icon(xy=(117, 0), icon=icons.get('battery-full'), size=8, fill=True)
+    draw.icon(xy=(117, 0), icon=icons.get('battery-full'), size=8, fill=True)
