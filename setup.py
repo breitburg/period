@@ -17,6 +17,8 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    scripts=['bin/period'],
+    entry_points={
+        'console_scripts' : ['period=period.cli:main'],
+    },
     install_requires=open(str(Path(__file__).resolve().parent.joinpath('requirements.txt')), 'r').read().split('\n')
 )
