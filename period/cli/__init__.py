@@ -4,6 +4,7 @@ from json import loads
 from period import __version__
 from period.cli.create import create_project
 from period.cli.run import run_project
+from period.cli.build import build_project
 
 
 def main():
@@ -11,7 +12,7 @@ def main():
     argv = argv[1:]
 
     if len(argv) == 0 or argv[0] == '--help':
-        print('Usage: period [OPTION]...\n\nOptions and arguments (and corresponding environment variables):\ncreate - Create new project\nrun - Run current project\nversion - Get current installed version number')
+        print('Usage: period [OPTION]...\n\nOptions and arguments (and corresponding environment variables):\ncreate - Create new project\nrun - Run current project\nversion - Get current installed version number\nbuild - Build current project')
 
     elif argv[0] == 'version':
         print(f'Installed version: Period SDK {__version__}')
@@ -26,3 +27,7 @@ def main():
         manifest = loads(open(file=join(path, 'package.json'), mode='r').read())
         run_project(path=path, manifest=manifest)
 
+    elif argv[0] == 'build':
+        path = getcwd()
+        manifest = loads(open(file=join(path, 'package.json'), mode='r').read())
+        build_project(path=path, name=manifest['name'], version=manifest['version'])
