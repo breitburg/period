@@ -16,16 +16,12 @@ def on_frame():
 
 ## Installation
 
-Use `pip` to install the latest version of `period` package:
+1. Download the `.tar.gz` file from [latest release](/breitburg/period/releases/latest).
+
+2. Install package by executing command from terminal:
 
 ```console
-pip install git+https://github.com/breitburg/period
-```
-
-To upgrade package version add `--upgrade` argument:
-
-```console
-pip install git+https://github.com/breitburg/period --upgrade
+pip install path-to-package
 ```
 
 ## Using
@@ -33,7 +29,7 @@ pip install git+https://github.com/breitburg/period --upgrade
 After installing library you need to use `period` command line utility. This command will generate sample project in your current path:
 
 ```console
-$ period create (name)
+$ period create project-name
 ```
 
 To run your project you need to be in the project path, use `run` argument to run.
