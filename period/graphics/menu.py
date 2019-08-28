@@ -8,7 +8,8 @@ offset = __configuration['bar_height'] + 1
 height = (draw.device.size[1] - offset) / 3
 
 
-def menu(items) :
+def menu(items):
+    delay(0.05)
     selected = 0
 
     while True :
