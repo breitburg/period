@@ -62,37 +62,42 @@ All requirements are defined in `requirements.txt`:
 
 ## Changelog
 
-**Release 0.0.9** (27-08-2019)
+**Release 0.1.0** (28-08-2019)
+- Added project building option
+- Added status bar dynamic height elements offsets calculation
+- Added status bar height as config option
+
+**Pre-Release 0.0.9** (27-08-2019)
 - Added support for Windows
 
-**Release 0.0.8** (26-08-2019)
+**Pre-Release 0.0.8** (26-08-2019)
 - Refactored CLI utility
 - Refactored status bar
 - Added FPS counter
 - Added display dim
 
-**Release 0.0.7** (25-08-2019)
+**Pre-Release 0.0.7** (25-08-2019)
 - Fixed buttons at hardware
 
-**Release 0.0.6** (23-08-2019)
+**Pre-Release 0.0.6** (23-08-2019)
 - Added version checking option to comamnd line tool
 - Added help to command line tool
 
-**Release 0.0.5** (23-08-2019)
+**Pre-Release 0.0.5** (23-08-2019)
 - Renamed `new-project` option to `create`
 - Added resources API
 
-**Release 0.0.4** (23-08-2019)
+**Pre-Release 0.0.4** (23-08-2019)
 - Fixed bug with icons font
 - Fixed bug with running app function
 
-**Release 0.0.3** (23-08-2019)
+**Pre-Release 0.0.3** (23-08-2019)
 - Added command line utility
 - New package architecture
 
-**Release 0.0.2** (23-08-2019)
+**Pre-Release 0.0.2** (23-08-2019)
 - Added new alerts
 - Added font awesome icons
 
-**Release 0.0.1** (21-08-2019)
+**Pre-Release 0.0.1** (21-08-2019)
 - Initial release
