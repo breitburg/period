@@ -16,7 +16,7 @@ def on_frame():
 
 ## Installation
 
-1. Download the `.tar.gz` file from [latest release](/releases/latest).
+1. Download the `.tar.gz` file from [latest release](https://github.com/breitburg/period/releases/latest).
 
 2. Install package by executing command from terminal:
 
