@@ -9,10 +9,10 @@ height = (draw.device.size[1] - offset) / 3
 
 
 def menu(items):
-    delay(0.05)
+    delay(0.1)
     selected = 0
 
-    while True :
+    while True:
         display_items = [selected - 1, selected, selected + 1]
         draw.rectangle(xy=(
             0,
