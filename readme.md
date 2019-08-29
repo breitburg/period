@@ -1,5 +1,7 @@
 # period ![](https://img.shields.io/github/languages/code-size/breitburg/period) ![](https://img.shields.io/github/v/release/breitburg/period?include_prereleases)
 
+![](https://imgur.com/download/Nf7iy9A/)
+
 Library for writing applications for watches with a 1-bit 128x64 display and [PiSugar](https://github.com/PiSugar/PiSugar) battery.
 
 ```python
