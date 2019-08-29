@@ -24,8 +24,8 @@ def menu(items):
         for item in display_items :
             if item < 0 or item > len(items) - 1 : continue
             draw.text(xy=(
-                0,
-                offset + (height * (display_items.index(item) + 1)) - height
+                2,
+                (offset + (height * (display_items.index(item) + 1)) - height) + int((height - draw.textsize(text=items[item])[1]) / 2)
             ), text=items[item], fill=item != selected)
 
         buttons_pressed = get_pressed()
