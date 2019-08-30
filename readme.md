@@ -53,7 +53,7 @@ $ period run
 
 ## Requirements
 
-To automaticly install all requirements use `pip` terminal util:
+To automatically install all requirements use `pip` terminal util:
 
 ```console
 pip install -r requirements.txt
@@ -70,6 +70,9 @@ All requirements are defined in `requirements.txt`:
 - fontawesome (5.10.1.post1)
 
 ## Changelog
+
+**Pre-Release 0.1.1** (30-08-2019)
+- Implemented menu
 
 **Release 0.1.0** (28-08-2019)
 - Added project building option
