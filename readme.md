@@ -26,6 +26,17 @@ def on_frame():
 pip install path-to-package
 ```
 
+## Features
+
+- Pixel font with cyrillic and latin
+- Graphical interface elements ready-to-use
+- Clear and simple project structure
+- Unified portable package structure
+- Supports the most popular display modules
+- Easy-to-use documentation
+- Simple command line tool
+- Simulator included in SDK
+
 ## Using
 
 After installing library you need to use `period` command line utility. This command will generate sample project in your current path:
