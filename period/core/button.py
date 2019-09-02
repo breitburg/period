@@ -5,7 +5,7 @@ if is_emulator:
     from pygame import K_UP as __K_UP,\
         K_DOWN as __K_DOWN, K_RIGHT as __K_RIGHT,\
         K_LEFT as __K_LEFT, K_1 as __K_1, K_2 as __K_2,\
-        K_3 as __K_3, K_RCTRL as __K_RCTRL
+        K_3 as __K_3, K_RSHIFT as __K_RSHIFT
 
 
 class Button:
@@ -28,7 +28,7 @@ if is_emulator:
         __K_LEFT: left,
         __K_UP: up,
         __K_DOWN: down,
-        __K_RCTRL: center,
+        __K_RSHIFT: center,
         __K_1: first,
         __K_2: second,
         __K_3: third

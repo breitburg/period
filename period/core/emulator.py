@@ -1,6 +1,6 @@
 from luma.emulator.device import pygame
 from sys import exit
-from pygame import K_UP, K_DOWN, K_RIGHT, K_LEFT, K_1, K_2, K_3, K_RCTRL
+from pygame import K_UP, K_DOWN, K_RIGHT, K_LEFT, K_1, K_2, K_3, K_RSHIFT
 from time import time
 from period.core.device import BaseDevice
 
@@ -19,9 +19,8 @@ class Emulator(pygame, BaseDevice):
             exit()
 
         self.__pressed_buttons.clear()
-        for button in [K_UP, K_DOWN, K_RIGHT, K_LEFT, K_1, K_2, K_3, K_RCTRL]:
-            if keystate[button]:
-                self.__pressed_buttons.append(button)
+        for button in [K_UP, K_DOWN, K_RIGHT, K_LEFT, K_1, K_2, K_3, K_RSHIFT]:
+            if keystate[button]: self.__pressed_buttons.append(button)
 
     def get_pressed(self):
         return self.__pressed_buttons
