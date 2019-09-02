@@ -12,8 +12,6 @@ def run_app():
     on_start = bindings.get('on_start')
     on_tick = bindings.get('on_tick')
 
-    last_buttons_pressed_time = time()
-
     try:
         on_start()
         while True:
@@ -24,13 +22,6 @@ def run_app():
             # Drawing status bar
             if __configuration.get('show_status_bar'): status_bar()
             if __configuration.get('show_fps'): fps(round(1 / (time() - start_time), 1))
-            if __configuration.get('auto_dim'):
-                if not get_pressed() :
-                    if last_buttons_pressed_time + 2 <= start_time:
-                        draw.device.contrast(80 if is_emulator else 1)
-                else:
-                    last_buttons_pressed_time = start_time
-                    draw.device.contrast(255)
     except Exception as exception:
         draw.clear()
         error(exception)

@@ -21,19 +21,20 @@ def menu(items):
             offset + height * 2
         ), fill=True)
 
-        for item in display_items :
-            if item < 0 or item > len(items) - 1 : continue
+        for item in display_items:
+            if item < 0 or item > len(items) - 1: continue
             draw.text(xy=(
                 2,
-                (offset + (height * (display_items.index(item) + 1)) - height) + int((height - draw.textsize(text=items[item])[1]) / 2)
+                (offset + (height * (display_items.index(item) + 1)) - height) + int(
+                    (height - draw.textsize(text=items[item])[1]) / 2)
             ), text=items[item], fill=item != selected)
 
         buttons_pressed = get_pressed()
-        if up in buttons_pressed :
-            if selected > 0 : selected -= 1
-        if down in buttons_pressed :
-            if selected < len(items) - 1 : selected += 1
-        if center in buttons_pressed :
+        if up in buttons_pressed:
+            if selected > 0: selected -= 1
+        if down in buttons_pressed:
+            if selected < len(items) - 1: selected += 1
+        if center in buttons_pressed:
             return selected
 
         status_bar()
