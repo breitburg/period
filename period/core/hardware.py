@@ -1,5 +1,7 @@
 from luma.oled.device import sh1106
 import RPi.GPIO as GPIO
+from time import time
+from period.core.device import BaseDevice
 
 pins = [6, 19, 5, 26, 13, 21, 20, 16]
 
@@ -8,11 +10,11 @@ for pin in pins:
     GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
-class Hardware(sh1106):
+class Hardware(sh1106, BaseDevice):
     pressed_buttons = []
 
     def __init__(self, serial):
-        super().__init__(serial, rotate=2)
+        super(Hardware, self).__init__(serial, rotate=2)
 
     def apply_actions(self):
         self.pressed_buttons.clear()
@@ -24,9 +26,11 @@ class Hardware(sh1106):
         return self.pressed_buttons
 
     def display(self, image):
+        self.start_time = time()
         assert(image.mode == self.mode)
         assert(image.size == self.size)
         self.apply_actions()
+        self.show_fps(image=image)
 
         image = self.preprocess(image)
 
@@ -52,3 +56,4 @@ class Hardware(sh1106):
                     (image_data[x + offsets[7]] and 0x80)
 
             self.data(list(buf))
+        self.frame_rate = round(1 / (time() - self.start_time), 1)
