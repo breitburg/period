@@ -5,7 +5,6 @@ def run_app():
     from period.core.config import __configuration
     from period.core.draw import draw
     from period.core.device import is_emulator
-    from period.graphics.debug import fps
     from period.graphics.error import error
     from period.core.button import get_pressed
 
@@ -21,7 +20,6 @@ def run_app():
 
             # Drawing status bar
             if __configuration.get('show_status_bar'): status_bar()
-            if __configuration.get('show_fps'): fps(round(1 / (time() - start_time), 1))
     except Exception as exception:
         draw.clear()
         error(exception)
