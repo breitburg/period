@@ -1,11 +1,13 @@
 from luma.emulator.device import pygame
 from sys import exit
 from pygame import K_UP, K_DOWN, K_RIGHT, K_LEFT, K_1, K_2, K_3, K_RCTRL
+from time import time
+from period.core.device import BaseDevice
 
 
-class Emulator(pygame):
+class Emulator(pygame, BaseDevice):
     def __init__(self, mode='1', scale=2, frame_rate=16):
-        super().__init__(mode=mode, scale=scale, frame_rate=frame_rate)
+        super(Emulator, self).__init__(mode=mode, scale=scale, frame_rate=frame_rate)
         self._pygame.display.set_caption('Period Simulator')
         self.__pressed_buttons = []
 
@@ -25,8 +27,11 @@ class Emulator(pygame):
         return self.__pressed_buttons
 
     def display(self, image):
+        self.start_time = time()
         assert (image.size == self.size)
         self._last_image = image
+
+        self.show_fps(image=image)
 
         image = self.preprocess(image)
         self._clock.tick(self._fps)
@@ -38,3 +43,4 @@ class Emulator(pygame):
             self._screen = self._pygame.display.set_mode(surface.get_size())
         self._screen.blit(surface, (0, 0))
         self._pygame.display.flip()
+        self.frame_rate = round(1 / (time() - self.start_time), 1)
