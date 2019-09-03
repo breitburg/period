@@ -35,7 +35,7 @@ def menu(items):
         if down in buttons_pressed:
             if selected < len(items) - 1: selected += 1
         if center in buttons_pressed:
-            delay(0.2)
+            delay(0.5)
             return selected
 
         status_bar()
