@@ -19,11 +19,8 @@ class BaseDevice:
         draw.rectangle(xy=(0, 0) + size, fill=False)
         draw.text(xy=(0, -2), text=text, fill=True)
 
-    def check_exit(self):
-        from period.core.button import get_pressed, left, first, second
-        buttons = get_pressed()
-
-        if all(elem in buttons for elem in [left, first, second]):
+    def check_exit(self, buttons):
+        if all(elem in self.pressed_buttons for elem in buttons):
             quit()
 
 
