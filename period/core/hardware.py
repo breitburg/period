@@ -22,6 +22,8 @@ class Hardware(sh1106, BaseDevice):
             if GPIO.input(button) == 0:
                 self.pressed_buttons.append(button)
 
+        self.check_exit()
+
     def get_pressed(self):
         return self.pressed_buttons
 

@@ -22,6 +22,8 @@ class Emulator(pygame, BaseDevice):
         for button in [K_UP, K_DOWN, K_RIGHT, K_LEFT, K_1, K_2, K_3, K_RSHIFT]:
             if keystate[button]: self.pressed_buttons.append(button)
 
+        self.check_exit()
+
     def get_pressed(self):
         return self.pressed_buttons
 
