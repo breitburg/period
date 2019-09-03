@@ -14,7 +14,6 @@ def run_app():
     try:
         on_start()
         while True:
-            start_time = time()
             draw.clear()
             on_tick()
 
