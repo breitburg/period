@@ -1,5 +1,4 @@
 def run_app():
-    from time import time
     from period.core.binding import bindings
     from period.graphics.statusbar import status_bar
     from period.core.config import __configuration

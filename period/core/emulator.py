@@ -9,7 +9,7 @@ class Emulator(pygame, BaseDevice):
     def __init__(self, mode='1', scale=2, frame_rate=16):
         super(Emulator, self).__init__(mode=mode, scale=scale, frame_rate=frame_rate)
         self._pygame.display.set_caption('Period Simulator')
-        self.__pressed_buttons = []
+        self.pressed_buttons = []
 
     def apply_actions(self):
         keystate = self._pygame.key.get_pressed()
@@ -18,12 +18,12 @@ class Emulator(pygame, BaseDevice):
             self._pygame.quit()
             exit()
 
-        self.__pressed_buttons.clear()
+        self.pressed_buttons.clear()
         for button in [K_UP, K_DOWN, K_RIGHT, K_LEFT, K_1, K_2, K_3, K_RSHIFT]:
-            if keystate[button]: self.__pressed_buttons.append(button)
+            if keystate[button]: self.pressed_buttons.append(button)
 
     def get_pressed(self):
-        return self.__pressed_buttons
+        return self.pressed_buttons
 
     def display(self, image):
         self.start_time = time()
