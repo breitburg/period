@@ -8,7 +8,7 @@ offset = __configuration['bar_height'] + 1
 height = (draw.device.size[1] - offset) / 3
 
 
-def menu(items):
+def menu(items, title=None):
     assert len(items) > 1
     selected = 0
 
@@ -35,9 +35,9 @@ def menu(items):
         if down in buttons_pressed:
             if selected < len(items) - 1: selected += 1
         if center in buttons_pressed:
-            delay(0.5)
+            delay(0.35)
             return selected
 
-        status_bar()
+        status_bar(title=title)
         draw.clear()
         delay(0.2)
