@@ -2,9 +2,9 @@ from os import getcwd
 from os.path import join
 from json import loads
 from period import __version__
-from period.cli.create import create_project
-from period.cli.run import run_project
-from period.cli.build import build_project
+from factory.create import create_project
+from factory.run import run_project
+from factory.build import build_project
 
 
 def main():
