@@ -71,6 +71,13 @@ All requirements are defined in `requirements.txt`:
 
 ## Changelog
 
+**Release 0.1.2** (04-09-2019)
+- Removed display dim
+- Added optimal frame rate counter
+- Added exit buttons combination
+- Fixed menu buttons pressing issues
+- CLI tool library moved to submodule
+
 **Pre-Release 0.1.1** (30-08-2019)
 - Implemented menu
 
