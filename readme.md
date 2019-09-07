@@ -1,4 +1,4 @@
-# period ![](https://img.shields.io/github/languages/code-size/breitburg/period) ![](https://img.shields.io/github/v/release/breitburg/period?include_prereleases)
+# period ![](https://img.shields.io/github/languages/code-size/getperiod/framework) ![](https://img.shields.io/github/v/release/getperiod/framework?include_prereleases)
 
 ![](https://imgur.com/download/Nf7iy9A/)
 
