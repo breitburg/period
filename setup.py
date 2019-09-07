@@ -10,7 +10,7 @@ setup(
     long_description=open(str(Path(__file__).resolve().parent.joinpath('readme.md')), 'r').read(),
     long_description_content_type='text/markdown',
     include_package_data=True,
-    url='https://github.com/breitburg/period',
+    url='https://github.com/getperiod/framework',
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
