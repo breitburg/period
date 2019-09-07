@@ -17,9 +17,6 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    entry_points={
-        'console_scripts': ['period=period.cli:main'],
-    },
     install_requires=open(str(Path(__file__).resolve().parent.joinpath('requirements.txt')), 'r').read().split('\n'),
     dependency_links=['git+ssh://git@github.com/getperiod/factory.git']
 )
