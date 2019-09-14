@@ -1,6 +1,7 @@
 from os import getcwd
 from os.path import join
 from json import loads
+from period import __version__
 from period.cli.create import create_project
 from period.cli.run import run_project
 from period.cli.build import build_project
@@ -12,6 +13,10 @@ def main():
 
     if len(argv) == 0 or argv[0] == '--help':
         print('Usage: period [OPTION]...\n\nOptions and arguments (and corresponding environment variables):\ncreate - Create new project\nrun - Run current project\nversion - Get current installed version number\nbuild - Build current project')
+
+    elif argv[0] == 'version':
+        print(f'Installed version: Period SDK {__version__}')
+
     elif argv[0] == 'create':
         name = argv[1]
         if argv[1] in ['--name', '-n']: name = argv[2]
