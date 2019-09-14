@@ -1,4 +1,4 @@
-# period ![](https://img.shields.io/github/languages/code-size/getperiod/framework) ![](https://img.shields.io/github/v/release/getperiod/framework?include_prereleases)
+# period ![](https://img.shields.io/github/languages/code-size/breitburg/period) ![](https://img.shields.io/github/v/release/breitburg/period?include_prereleases)
 
 ![](https://imgur.com/download/Nf7iy9A/)
 
@@ -16,6 +16,16 @@ def on_frame():
     period.draw.rectangle(xy=(0, 0, 10, 10), fill=True)
 ```
 
+## Installation
+
+1. Download the `.tar.gz` file from [latest release](https://github.com/breitburg/period/releases/latest).
+
+2. Install package by executing command from terminal:
+
+```console
+pip install path-to-package
+```
+
 ## Features
 
 - Pixel font with cyrillic and latin
@@ -24,7 +34,22 @@ def on_frame():
 - Unified portable package structure
 - Supports the most popular display modules
 - Easy-to-use documentation
-- Simulator included
+- Simple command line tool
+- Simulator included in SDK
+
+## Using
+
+After installing library you need to use `period` command line utility. This command will generate sample project in your current path:
+
+```console
+$ period create project-name
+```
+
+To run your project you need to be in the project path, use `run` argument to run.
+
+```console
+$ period run
+```
 
 ## Requirements
 
