@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 from pathlib import Path
-from period.core.version import __version__
+from period.version import __version__
 
 setup(
     name='period',
