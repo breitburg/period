@@ -30,7 +30,7 @@ if is_emulator:
     environ['PYGAME_HIDE_SUPPORT_PROMPT'] = 'hide'
     from period.core.emulator import Emulator
 
-    device = Emulator(mode='1', scale=6, frame_rate=20)
+    device = Emulator(mode='1', scale=2, frame_rate=20)
 else:
     from luma.core.interface.serial import spi
     from period.core.hardware import Hardware

@@ -20,10 +20,18 @@ def on_frame():
 
 1. Download the `.tar.gz` file from [latest release](https://github.com/breitburg/period/releases/latest).
 
-2. Install package by executing command from terminal:
+2. Unpack it and navigate to unpacked package
+
+3. Install requirements by executing command from terminal:
 
 ```console
-pip install path-to-package
+pip install requirements.txt
+```
+
+4. Install package itself by executing command from terminal:
+
+```console
+pip install .
 ```
 
 ## Features
@@ -42,13 +50,13 @@ pip install path-to-package
 After installing library you need to use `period` command line utility. This command will generate sample project in your current path:
 
 ```console
-$ period create project-name
+period create project-name
 ```
 
 To run your project you need to be in the project path, use `run` argument to run.
 
 ```console
-$ period run
+period run
 ```
 
 ## Requirements
