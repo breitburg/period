@@ -1,6 +1,6 @@
 # period ![](https://img.shields.io/github/languages/code-size/breitburg/period) ![](https://img.shields.io/github/v/release/breitburg/period?include_prereleases)
 
-![](https://imgur.com/download/Nf7iy9A/)
+![](https://i.imgur.com/Nf7iy9A.png)
 
 Library for writing applications for watches with a 1-bit 128x64 display and [PiSugar](https://github.com/PiSugar/PiSugar) battery.
 
@@ -25,7 +25,7 @@ def on_frame():
 3. Install requirements by executing command from terminal:
 
 ```console
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 4. Install package itself by executing command from terminal:
